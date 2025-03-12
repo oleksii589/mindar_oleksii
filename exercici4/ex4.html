@@ -7,25 +7,14 @@
   <body>
     <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
-	<a-asset-item id="glassesModel" src="deal_with_it_glasses_edition/scene.gltf"></a-asset-item>
-      </a-assets>
+        <a-asset-item id="mask" src="deal_with_it_glasses_edition/scene.gltf"></a-asset-item>
+    </a-assets>
+
 
       <a-camera active="false" position="0 0 0"></a-camera>
-      <a-entity mindar-face-target="anchorIndex: 168">
-        <a-gltf-model src="#avatarModel"
-            scale="0.005 0.005 0.005"
-            position="0 0 0"
-            rotation="90 0 0"
-            animation-mixer ="clip: salute_on_kaya" >
-        </a-gltf-model>    
+      <a-entity mindar-face-target="anchorIndex: 10">
+        <a-gltf-model rotation="0 -0 0" position="0 0.1 -0.5" scale="0.0028 0.0028 0.0028" src="#mask" visible="true"></a-gltf-model>
       </a-entity>
-
-
-
-
-
     </a-scene>
   </body>
 </html>
-
-
