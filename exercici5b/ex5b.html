@@ -1,0 +1,55 @@
+<html>
+  <head>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene cursor="rayOrigin: mouse">
+
+    
+        <a-assets>
+          <img id="fons" src="file(19).enc" />
+          <img id="texturaterra" src="godzilla.jpg" />
+          <img id="guernica" src="HECTOR.jpg" />        
+          <img id="cara" src="aleix.png" />            
+          <img id="bicicletes" src="mehdi.png" />
+          <img id="texturaesfera" src="Diseño sin título.png" />
+          <img id="texturacilindre" src="sergio.jpg" />
+     
+        </a-assets>
+        <a-sky src="#fons"></a-sky>
+        <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" src="#texturaterra"></a-plane>
+        <a-plane position="-1 4 -8" rotation="0 0 0" width="8" height="2"  src="#guernica"
+        animation="property: position; to: -1 4 -30; dur: 5000; dir: alternate; loop: true">
+        </a-plane>
+        <a-box position="-4 3 0" rotation="0 0 50"  src="#cara" depth="1" height="1" width="1"
+        animation="property: rotation; to: 0 360 0; dur: 4000; loop: true"></a-box>
+        <a-sphere position="-4 3 5" rotation="0 0 50"  src="#texturaesfera" depth="1" height="1" width="1"
+        animation="property: rotation; to: 0 360 0; dur: 4000; loop: true"></a-sphere>
+        <a-dodecahedron id="esmou" position="12 2 -6" rotation="0 30 0" radius="3" src="#bicicletes">
+        </a-dodecahedron>
+        <a-cylinder id="texturacilindre" position="4 2 -5" rotation="0 30 0" radius="0.5" height="3" src="#texturacilindre" 
+        animation="property: rotation; to: 0 360 0; dur: 4000; loop: true">
+        </a-cylinder>
+        
+
+        </a-scene>
+        <script>
+          let unobjecte = document.querySelector("#esmou");
+       
+          unobjecte.addEventListener("click", () => {            
+            unobjecte.setAttribute("animation", {
+
+
+              property: "rotation",
+
+
+              to: "800000 400000 600000",
+
+
+              dur: 1000
+            });
+          });
+        </script>
+        
+  </body>
+</html>
