@@ -25,5 +25,23 @@
         </a-dodecahedron>
 
         </a-scene>
+        <script>
+          let unobjecte = document.querySelector("#esmou");
+       
+          unobjecte.addEventListener("click", () => {            
+            unobjecte.setAttribute("animation", {
+
+
+              property: "rotation",
+
+
+              to: "800000 400000 600000",
+
+
+              dur: 1000
+            });
+          });
+          
+        </script>
   </body>
 </html>
