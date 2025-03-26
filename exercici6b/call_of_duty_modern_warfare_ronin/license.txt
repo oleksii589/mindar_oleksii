@@ -1,0 +1,11 @@
+Model Information:
+* title:	Call of Duty Modern Warfare_Ronin
+* source:	https://sketchfab.com/3d-models/call-of-duty-modern-warfare-ronin-f47f91e759774193afa5d1d4c4642c36
+* author:	KaguyaShinomya (https://sketchfab.com/Kitagawa.Marin)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Call of Duty Modern Warfare_Ronin" (https://sketchfab.com/3d-models/call-of-duty-modern-warfare-ronin-f47f91e759774193afa5d1d4c4642c36) by KaguyaShinomya (https://sketchfab.com/Kitagawa.Marin) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
