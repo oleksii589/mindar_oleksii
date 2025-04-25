@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://castelletm12b.cat/build/assets/question.js" defer></script>
+  </head>
+  <body>
+    <a-scene cursor="rayOrigin: mouse">
+      <a-assets>
+        <img id="imgnether" src="portal.jpg" >
+        <a-asset-item id="mundo" src="minecraft_world/scene.gltf"></a-asset-item>
+        <a-asset-item id="steve" src="steve/scene.gltf"></a-asset-item>
+        <a-asset-item id="cow" src="minecraft_-_cow/scene.gltf"></a-asset-item>
+        <a-asset-item id="chicken" src="minecraft_-_chicken/scene.gltf"></a-asset-item>
+      </a-assets>
+      <a-entity 
+      
+        gltf-model="#mundo"
+        position="0 -2 -5"
+        scale="10 10 10"
+        rotation="0 180 0">
+      </a-entity>
+      <a-entity gltf-model="#steve" position="-15 1 5" rotation="0 110 0" scale="1 1 1" 
+      animation="property: position; dur: 10000; from: -15 1 5; to: 0 1 0; dir: alternate; loop: true">        
+      </a-entity>
+      <a-entity gltf-model="#cow" question="112" position="2 1 -10" rotation="0 0 0" scale="0.1 0.1 0.1"
+      animation="property: position; dur: 10000; 
+        from: -5 1 -10; 
+        to: -5 1 10; 
+        dir: alternate; loop: true">        
+      </a-entity>
+      <a-entity gltf-model="#chicken" position="-7 1 10" rotation="0 180 0" scale="0.1 0.1 0.1" 
+      animation="property: position; dur: 10000; from: -8 1 10; to: -8 1 -10; dir: alternate; loop: true"></a-entity>  
+      <a-plane question="70" position="-2 0.4 6" rotation="0 180 0" width="1" height="1" src="#imgnether" mylink="href: exercici2prova.html"></a-plane>      
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

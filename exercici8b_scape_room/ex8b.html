@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+  <a-scene cursor="rayOrigin: mouse">
+          <a-assets>
+          <!-- Imatges 360 -->
+          <img id="i01" src="minecraft-655158_1280.jpg">
+          <img id="i02" src="minecraft-6923660_1280.jpg">
+     
+          <!--imatge del plano-->  
+          <img id="plano" src="pantalla-inicio-minecraft.webp">
+
+
+         
+          <!-- Audios -->
+          <audio id="audio1" src="audios/minecraft-calm-sound.mp3"></audio>
+
+
+
+
+        </a-assets>
+
+
+        <a-entity camera look-controls wasd-controls="false">
+        <!-- fuseTimeout = el temps que triga en fer click des de que es posiciona sobre un objecte-->
+        <a-entity id="myCursor" cursor="fuse: true; fuseTimeout: 1000"
+                position="0 0 -1"
+                geometry="primitive: circle; radius: 0.005;"
+                material="color: red; shader: flat"
+                animation="property: components.material.material.color;
+                    type: color;
+                    to: white;
+                    dur: 1000;
+                    dir: alternate;
+                    loop: true">
+        </a-entity>
+        </a-entity>
+           
+
+
+        <!-- Entorn 360 inicial -->
+        <a-sky id="sky" src="#i01"></a-sky>
+        <a-plane id="plano" position="0 -1 -2" src="#plano" rotation="0 0 0" scale="2 1 2"></a-plane>
+       
+        <!--boto d'anar a la torre-->
+        <a-sphere id="esfera"  bototorre="" position="-0.7 -0.7 -2" radius="0.03" color="blue"
+        animation="property: scale; dur: 1000;  to: 1.2 1.2 1.2; dir: alternate;  loop: true"
+        ></a-sphere>
+       
+     
+      <!-- Element de so -->
+      <a-entity id="sound" sound="src: #audio1"></a-entity>
+    </a-scene>
+    <script>
+      AFRAME.registerComponent("bototorre", {
+        init: function() {  
+          this.el.addEventListener("click", () => {        
+            window.location.href = "ex8b2.html"; // Cambia la URL por la que quieras
+          });
+        }
+      });
+    </script>
+
+    
+  </body>
+</html>

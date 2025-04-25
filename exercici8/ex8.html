@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+  <a-scene cursor="rayOrigin: mouse">
+          <a-assets>
+          <!-- Imatges 360 -->
+          <img id="i01" src="imatges/imatge0.jpg">
+          <img id="i02" src="imatges/torreSuperior.jpg">
+     
+          <!--imatge del plano-->  
+          <img id="plano" src="imatges/plano.jpg">
+
+
+         
+          <!-- Audios -->
+          <audio id="audio1" src="audios/Torre.mp3"></audio>
+
+
+
+
+        </a-assets>
+
+
+        <a-entity camera look-controls wasd-controls="false">
+        <!-- fuseTimeout = el temps que triga en fer click des de que es posiciona sobre un objecte-->
+        <a-entity id="myCursor" cursor="fuse: true; fuseTimeout: 1000"
+                position="0 0 -1"
+                geometry="primitive: circle; radius: 0.005;"
+                material="color: red; shader: flat"
+                animation="property: components.material.material.color;
+                    type: color;
+                    to: white;
+                    dur: 1000;
+                    dir: alternate;
+                    loop: true">
+        </a-entity>
+        </a-entity>
+           
+
+
+        <!-- Entorn 360 inicial -->
+        <a-sky id="sky" src="#i01"></a-sky>
+        <a-plane id="plano" position="0 -1 -2" src="#plano" rotation="0 0 0" scale="2 1 2"></a-plane>
+       
+        <!--boto d'anar a la torre-->
+        <a-sphere id="esfera"  bototorre="" position="-0.7 -0.7 -2" radius="0.03" color="blue"
+        animation="property: scale; dur: 1000;  to: 1.2 1.2 1.2; dir: alternate;  loop: true"
+        ></a-sphere>
+       
+     
+      <!-- Element de so -->
+      <a-entity id="sound" sound="src: #audio1"></a-entity>
+    </a-scene>
+
+
+    <script>
+      const sky = document.querySelector('#sky');
+      const sound = document.querySelector('#sound');
+     
+      //elimina el moviment de les tecles del cursor
+      document.querySelector("[camera]").removeAttribute("wasd-controls");
+       
+
+
+        AFRAME.registerComponent("bototorre", {
+        init: function() {  
+            this.el.addEventListener("click", (e) => {        
+                sky.setAttribute('src', '#i02'); //Mostra la imatge de la torre                
+                if (sound.components.sound.isPlaying) {  
+                        sound.components.sound.stopSound(); // Para el so si ja s'està reproduint
+                }
+                sound.setAttribute('sound', 'src', '#audio1'); // Assigna l'audio que toca
+                sound.components.sound.playSound();    // Reprodueix el so      
+            })
+            }
+            });
+       
+   
+    </script>
+  </body>
+</html>

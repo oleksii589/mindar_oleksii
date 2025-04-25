@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+  <a-scene cursor="rayOrigin: mouse">
+          <a-assets>
+          <!-- Imatges 360 -->
+          <img id="i01" src="imatges/01.jpg">
+          <img id="i02" src="imatges/02.jpg">
+          <img id="i03" src="imatges/03.jpg">
+          <!--imatge del botó de entrada-->  
+          <img id="imgEntrada" src="entragroc.png" >
+          <!-- Audios -->
+          <audio id="audio1" src="banda_sonora.mp3"></audio>
+        </a-assets>
+
+
+        <a-entity camera look-controls wasd-controls="false">
+        <!-- fuseTimeout = el temps que triga en fer click des de que es posiciona sobre un objecte-->
+        <a-entity id="myCursor" cursor="fuse: true; fuseTimeout: 1000"
+                position="0 0 -1"
+                geometry="primitive: circle; radius: 0.005;"
+                material="color: red; shader: flat"
+                animation="property: components.material.material.color;
+                    type: color;
+                    to: white;
+                    dur: 1000;
+                    dir: alternate;
+                    loop: true">
+        </a-entity>
+        </a-entity>
+           
+
+
+        <!-- Entorn 360 inicial -->
+        <a-sky id="sky" src="#i01"></a-sky>
+        <a-plane id="inici" position="0 0.6 -5" src="#imgEntrada" rotation="0 0 0"   transparent="true" mylink=""
+        animation="property: position; dur: 500; from: 0 0.6 -5; to: 0 0.6 -4.5; dir: alternate; loop: true"
+        ></a-plane>
+
+
+      <!-- Element de so -->
+      <a-entity id="sound" sound="src: #audio1"></a-entity>
+    </a-scene>
+
+
+    <script>
+      // Variables per gestionar els canvis
+      const sky = document.querySelector('#sky');
+      const sound = document.querySelector('#sound');  
+      let idInterval;  // identificador de l'interval
+      segons=0;
+
+
+      function controlImatges(){
+          // Ha d'anar acompanyat amb la música
+          segons=segons+1;
+          if (segons ==2)  sky.setAttribute('src', '#i02');    
+          if (segons ==10)  sky.setAttribute('src', '#i03');
+         
+          // Quan acaba la música torna a la imatge inicial
+          // Ha d'anar sincronitzat amb la música que escolliu
+          // Tota l'animació hauria de durar uns 90 segons
+          // el valor de 30 s'ha de canviar pel del final de la música
+          if (segons==30) {
+            segons=0;
+            //para el rellotge
+            clearInterval(idInterval);
+            // mostra la primera imatge
+            sky.setAttribute('src', '#i01');
+            // mostra el botó d'entrada        
+            document.querySelector('#inici').setAttribute('visible', true);
+            // mostra el cursor
+            document.querySelector('#mycursor').setAttribute('visible', true);    
+          }
+      }      
+
+
+      AFRAME.registerComponent("mylink", {
+        init: function() {  
+         this.el.addEventListener("click", (e) => {
+          sound.setAttribute('sound', 'src', '#audio1'); // Assigna el segon so
+          sound.components.sound.playSound();    // Reprodueix el so
+               // crida a una funcio cada segon
+              idInterval=setInterval(controlImatges, 1000);
+              // Amaga el botó d'entrada        
+              document.querySelector('#inici').setAttribute('visible', false);
+              // Amaga el cursor
+              document.querySelector('#mycursor').setAttribute('visible', false);        
+           })
+         }
+         })
+       
+   
+    </script>
+  </body>
+</html>

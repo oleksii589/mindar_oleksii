@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://castelletm12b.cat/build/assets/question.js" defer></script>
+
+
+
+  </head>
+  <body>
+  <a-scene cursor="rayOrigin: mouse">
+    <a-assets>
+      <img id="imgfondo" src="portal.jpg" >
+      <img id="imgnether" src="nether.png" >
+      <a-asset-item id="piglin" src="piglin/scene.gltf"></a-asset-item>
+      <a-asset-item id="ghast" src="minecraft_-_ghast/scene.gltf"></a-asset-item>
+    </a-assets>
+   
+    <a-entity camera look-controls wasd-controls="false">
+     <a-entity cursor="fuse: true; fuseTimeout: 2000"
+           position="0 0 -1"
+           geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+           material="color: red; shader: flat"
+           animation="property: components.material.material.color;
+                 type: color;
+                 to: white;
+                 dur: 1000;
+                 dir: alternate;
+                 loop: true">
+     </a-entity>
+    </a-entity>
+      <a-sky src="#imgnether"></a-sky>
+      <a-entity gltf-model="#piglin" position="-2 -6 10" rotation="0 10 0" scale="1 1 1" 
+      animation="property: position; dur: 10000; from: -2 -6 10; to: -2 -6 20; dir: alternate; loop: true">
+      <!--animation="property: position; dur: 10000; from: -7 3 0; to: -7 3 -20; dir: alternate; loop: true"-->        
+      </a-entity>
+      <a-entity gltf-model="#ghast" question="110" position="-7 3 0" rotation="0 90 0" scale="0.1 0.1 0.1" 
+      animation="property: position; dur: 10000; from: -7 3 0; to: 7 3 0; dir: alternate; loop: true">        
+      </a-entity>
+      <a-plane question="113" position="-8 -5 15" rotation="0 180 0" width="5" height="5" src="#imgfondo" mylink="href: exercici5prova.html"></a-plane>
+
+    </body>
+</html

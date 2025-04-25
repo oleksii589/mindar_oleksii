@@ -1,0 +1,11 @@
+Model Information:
+* title:	PICO DE DIAMANTE! - MINECRAFT (OBJ)
+* source:	https://sketchfab.com/3d-models/pico-de-diamante-minecraft-obj-dc3ecf8fa73b4d95b79f7403e857ec90
+* author:	ElUvitta (https://sketchfab.com/xddron814)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "PICO DE DIAMANTE! - MINECRAFT (OBJ)" (https://sketchfab.com/3d-models/pico-de-diamante-minecraft-obj-dc3ecf8fa73b4d95b79f7403e857ec90) by ElUvitta (https://sketchfab.com/xddron814) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
