@@ -11,7 +11,7 @@
         <a-asset-item id="steve" src="steve/scene.gltf"></a-asset-item>
         <a-asset-item id="cow" src="minecraft_-_cow/scene.gltf"></a-asset-item>
         <a-asset-item id="chicken" src="minecraft_-_chicken/scene.gltf"></a-asset-item>
-        <audio id="audio1" src="audios/minecraft-calm-sound.mp3"></audio>
+        <audio id="audio1" src="minecraft-calm-sound.mp3" autoplay="true" loop="true"></audio>
       </a-assets>
       <a-entity 
       
@@ -34,5 +34,11 @@
       <a-plane question="70" position="-2 0.4 6" rotation="0 180 0" width="1" height="1" src="#imgnether" mylink="href: exercici2prova.html"></a-plane>      
       </a-entity>
     </a-scene>
+    <script>
+      window.addEventListener('load', function() {
+        var audio = document.getElementById('audio1');
+        audio.play();
+      });
+    </script>
   </body>
 </html>
