@@ -20,7 +20,10 @@
       <img id="imgnether" src="end.webp" >
       <a-asset-item id="dragon" src="realistic_dragon_minecraft/scene.gltf"></a-asset-item>
       <a-asset-item id="enderman" src="minecraft_-_enderman/scene.gltf"></a-asset-item>
-      <audio id="audio1" src="minecraft-calm-sound.mp3" autoplay="true" loop="true"></audio>
+      <audio controls>
+        <source src="audios/minecraft-calm-sound.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
     </a-assets>
    
     <a-entity camera look-controls wasd-controls="false">
@@ -46,11 +49,5 @@
       <!--animation="property: position; dur: 10000; from: -100 100 -100; to: 0 100 0; dir: alternate; loop: true"-->
      <!-- <a-plane position="-5 -5  6"  src="#imgfondo" rotation="0 120 0" scale="3 3 3" transparent="true" mylink="href: exercici4prova.html"></a-plane>-->
       <a-plane question="115" position="-5 -5  6" rotation="0 140 0" width="5" height="5" src="#imgfondo" ></a-plane>
-      <script>
-        window.addEventListener('load', function() {
-          var audio = document.getElementById('audio1');
-          audio.play();
-        });
-      </script>
   </body>
 </html>

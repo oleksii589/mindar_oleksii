@@ -10,9 +10,10 @@
         <img id="imgend" src="end.png">
         <a-asset-item id="mundo" src="minecraft_landscape/scene.gltf"></a-asset-item>
         <a-asset-item id="pic" src="pico_de_diamante_-_minecraft_obj/scene.gltf"></a-asset-item>
-        <audio autoplay>
-          <source src="audios/minecraft-calm-sound.mp3" type="audio/mp3">
-        </audio>  
+        <audio controls>
+          <source src="audios/minecraft-calm-sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio> 
       </a-assets>
 
       <!-- Modelo 3D como fondo -->
@@ -31,11 +32,6 @@
       <a-plane position="2 -3 20" rotation="0 180 0" width="5" height="5" src="#imgdiamond"></a-plane>
     </a-scene>
 
-    <script>
-      window.addEventListener('load', function() {
-        var audio = document.getElementById('audio1');
-        audio.play();
-      });
-    </script>
+    
   </body>
 </html>
